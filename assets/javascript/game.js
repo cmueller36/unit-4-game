@@ -24,10 +24,10 @@ function restartGame() {
     if (confirm("Would you like to play again?")) {
         //yes
         //generate new crystal numbers
-        crystal1Number = 1;
-        crystal2Number = 2;
-        crystal3Number = 3;
-        crystal4Number = 4;
+        crystal1Number = Math.floor(Math.random() * 12 + 1);
+        crystal2Number = Math.floor(Math.random() * 12 + 1);
+        crystal3Number = Math.floor(Math.random() * 12 + 1);
+        crystal4Number = Math.floor(Math.random() * 12 + 1);
         numberOptions = [crystal1Number, crystal2Number, crystal3Number, crystal4Number];
         $("#crystals").empty();
         $("#user-score").empty();
@@ -58,10 +58,10 @@ function restartGame() {
 
 ////////////////////////////////////// start game /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function startgame() {
-    crystal1Number = 1;
-    crystal2Number = 2;
-    crystal3Number = 3;
-    crystal4Number = 4;
+    crystal1Number = Math.floor(Math.random() * 12 + 1);
+    crystal2Number = Math.floor(Math.random() * 12 + 1);
+    crystal3Number = Math.floor(Math.random() * 12 + 1);
+    crystal4Number = Math.floor(Math.random() * 12 + 1);
     numberOptions = [crystal1Number, crystal2Number, crystal3Number, crystal4Number];
     $("#crystals").empty();
     $("#user-score").empty();
@@ -108,7 +108,8 @@ crystals.on("click", ".crystal-image", function () {
     if (total === randNumber) {
         alert("You Won!");
         userWins++;
-        $("#wins").html(userWins);
+        var html1 = "<p>Wins:"+userWins+ "</p>";
+        $("#wins").html(html1);
         restartGame();
     }
 
@@ -116,7 +117,8 @@ crystals.on("click", ".crystal-image", function () {
     if (total > randNumber) {
         alert("You Lost!");
         userLosses++;
-        $("#losses").html(userLosses);
+        var html2 = "<p>Losses: "+userLosses+ "</p>";
+        $("#losses").html(html2);
         restartGame();
     };
 
