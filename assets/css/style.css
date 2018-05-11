@@ -13,12 +13,13 @@ body{
     color: white;
     text-align: center;
     margin-top: 10px;
+    width: 100%;
 }
 
 #main-body{
     background-color: blue;
     color: white;
-    height: 300px;
+    height: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
